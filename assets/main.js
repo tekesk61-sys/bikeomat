@@ -107,18 +107,27 @@
     counters.forEach(c => co.observe(c));
   }
 
-  /* ---- Formular (Demo / kein Backend) ---- */
-  document.querySelectorAll('form[data-demo]').forEach(form => {
+  /* ---- Formular-Submit via FormSubmit.co ---- */
+  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
       const ok = form.querySelector('.form-success');
       if (btn) { btn.textContent = 'Wird gesendet …'; btn.disabled = true; }
-      setTimeout(() => {
-        form.querySelectorAll('.field, .chips, .form-actions').forEach(el => el.style.display = 'none');
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      })
+      .then(r => r.json())
+      .then(data => {
+        form.querySelectorAll('.field, .field-row, .chips, .form-actions').forEach(el => el.style.display = 'none');
         if (ok) ok.style.display = 'block';
-        else { btn.textContent = 'Gesendet ✓'; }
-      }, 900);
+        else if (btn) { btn.textContent = 'Gesendet ✓'; }
+      })
+      .catch(() => {
+        if (btn) { btn.textContent = 'Fehler – bitte erneut versuchen'; btn.disabled = false; }
+      });
     });
   });
 

@@ -65,26 +65,29 @@
         </ul>
       </div>
       <div class="form-card reveal" data-d="1">
-        <form data-demo>
+        <form action="https://formsubmit.co/ajax/info@bikeomat.de" method="POST">
+          <input type="hidden" name="_subject" value="Neue Angebotsanfrage über bikeomat.de">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <div class="field"><label>Ich interessiere mich für</label>
             <div class="chips">
-              <label class="chip"><input type="radio" name="modell" checked> Mieten</label>
-              <label class="chip"><input type="radio" name="modell"> Kaufen</label>
-              <label class="chip"><input type="radio" name="modell"> Noch unsicher</label>
+              <label class="chip"><input type="radio" name="Interesse" value="Mieten" checked> Mieten</label>
+              <label class="chip"><input type="radio" name="Interesse" value="Kaufen"> Kaufen</label>
+              <label class="chip"><input type="radio" name="Interesse" value="Noch unsicher"> Noch unsicher</label>
             </div>
           </div>
           <div class="field"><label for="ziel">Art des Standorts</label>
-            <select id="ziel"><option>Stadt / Kommune</option><option>Hotel</option><option>Campingplatz</option><option>Unternehmen</option><option>Wohnanlage</option><option>Bahnhof</option><option>Universität</option><option>Freizeitpark</option><option>Sonstiges</option></select>
+            <select id="ziel" name="Standort-Art"><option>Stadt / Kommune</option><option>Hotel</option><option>Campingplatz</option><option>Unternehmen</option><option>Wohnanlage</option><option>Bahnhof</option><option>Universität</option><option>Freizeitpark</option><option>Sonstiges</option></select>
           </div>
           <div class="field-row">
-            <div class="field"><label for="name">Name *</label><input id="name" required></div>
-            <div class="field"><label for="org">Organisation</label><input id="org"></div>
+            <div class="field"><label for="name">Name *</label><input id="name" name="Name" required></div>
+            <div class="field"><label for="org">Organisation</label><input id="org" name="Organisation"></div>
           </div>
           <div class="field-row">
-            <div class="field"><label for="mail">E-Mail *</label><input id="mail" type="email" required></div>
-            <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel"></div>
+            <div class="field"><label for="mail">E-Mail *</label><input id="mail" name="E-Mail" type="email" required></div>
+            <div class="field"><label for="tel">Telefon</label><input id="tel" name="Telefon" type="tel"></div>
           </div>
-          <div class="field"><label for="msg">Ihre Nachricht</label><textarea id="msg" placeholder="Standort, Anzahl, Zeitrahmen …"></textarea></div>
+          <div class="field"><label for="msg">Ihre Nachricht</label><textarea id="msg" name="Nachricht" placeholder="Standort, Anzahl, Zeitrahmen …"></textarea></div>
           <div class="form-actions"><button type="submit" class="btn btn-primary btn-lg btn-block">Angebot anfordern</button>
             <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß Datenschutzerklärung zu.</p></div>
           <div class="form-success" style="display:none;text-align:center;padding:20px 0">
@@ -105,10 +108,13 @@
         <span class="eyebrow">Persönlich</span>
         <h3 style="margin:8px 0 8px;font-size:1.6rem">Beratung vereinbaren</h3>
         <p style="color:var(--muted);margin-bottom:20px">Wir nehmen uns Zeit für Ihre Fragen – telefonisch oder per Video.</p>
-        <form data-demo>
-          <div class="field"><label for="b-name">Name *</label><input id="b-name" required></div>
-          <div class="field"><label for="b-mail">E-Mail *</label><input id="b-mail" type="email" required></div>
-          <div class="field"><label for="b-time">Wunschzeitraum</label><select id="b-time"><option>Vormittags</option><option>Nachmittags</option><option>Flexibel</option></select></div>
+        <form action="https://formsubmit.co/ajax/info@bikeomat.de" method="POST">
+          <input type="hidden" name="_subject" value="Beratungsanfrage über bikeomat.de">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="field"><label for="b-name">Name *</label><input id="b-name" name="Name" required></div>
+          <div class="field"><label for="b-mail">E-Mail *</label><input id="b-mail" name="E-Mail" type="email" required></div>
+          <div class="field"><label for="b-time">Wunschzeitraum</label><select id="b-time" name="Wunschzeitraum"><option>Vormittags</option><option>Nachmittags</option><option>Flexibel</option></select></div>
           <div class="form-actions"><button type="submit" class="btn btn-dark btn-block">Beratungstermin anfragen</button></div>
           <div class="form-success" style="display:none;padding:16px 0"><h3 style="font-size:1.3rem">Termin angefragt ✓</h3><p style="color:var(--muted)">Wir schlagen Ihnen passende Zeiten vor.</p></div>
         </form>
@@ -117,10 +123,13 @@
         <span class="eyebrow">Schnell & einfach</span>
         <h3 style="margin:8px 0 8px;font-size:1.6rem">Rückruf anfordern</h3>
         <p style="color:var(--muted);margin-bottom:20px">Hinterlassen Sie Ihre Nummer – wir rufen Sie zeitnah zurück.</p>
-        <form data-demo>
-          <div class="field"><label for="r-name">Name *</label><input id="r-name" required></div>
-          <div class="field"><label for="r-tel">Telefonnummer *</label><input id="r-tel" type="tel" required></div>
-          <div class="field"><label for="r-when">Wann erreichen wir Sie?</label><input id="r-when" placeholder="z. B. heute ab 14 Uhr"></div>
+        <form action="https://formsubmit.co/ajax/info@bikeomat.de" method="POST">
+          <input type="hidden" name="_subject" value="Rückrufwunsch über bikeomat.de">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="field"><label for="r-name">Name *</label><input id="r-name" name="Name" required></div>
+          <div class="field"><label for="r-tel">Telefonnummer *</label><input id="r-tel" name="Telefonnummer" type="tel" required></div>
+          <div class="field"><label for="r-when">Wann erreichen wir Sie?</label><input id="r-when" name="Erreichbarkeit" placeholder="z. B. heute ab 14 Uhr"></div>
           <div class="form-actions"><button type="submit" class="btn btn-primary btn-block">Rückruf anfordern</button></div>
           <div class="form-success" style="display:none;padding:16px 0"><h3 style="font-size:1.3rem">Rückruf notiert ✓</h3><p style="color:var(--muted)">Wir melden uns telefonisch bei Ihnen.</p></div>
         </form>

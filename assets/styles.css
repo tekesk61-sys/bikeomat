@@ -411,11 +411,35 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
   .field-row { grid-template-columns:1fr; }
   .footer-top { grid-template-columns:1fr 1fr; }
   .sticky-cta { display:flex; }
-  body { padding-bottom: 76px; }
+  body { padding-bottom: 90px; }
   .header-cta .btn { padding:11px 18px; font-size:.9rem; }
+  .map-canvas { min-height:320px; }
+  .map-side { padding:24px; }
+  .use-list button { padding:10px 12px; font-size:.9rem; }
+  .quote-card blockquote { font-size:1.15rem; }
+  .plan .price { font-size:2rem; }
+  .info-card { padding:16px; }
+  .cta-band { padding:clamp(36px,6vw,60px) clamp(20px,4vw,40px); }
 }
 @media (max-width: 480px){
   .footer-top { grid-template-columns:1fr; }
   .hero-trust { gap:14px; }
   .float-card { display:none; }
+  .cols-4 { grid-template-columns:1fr; }
+  .stats { gap:20px; }
+  .stat .num { font-size:clamp(2rem,8vw,2.8rem); }
+  .h-display { font-size:clamp(2rem,7vw,3rem); }
+  .map-canvas { min-height:260px; }
+  .use-list { grid-template-columns:1fr 1fr; }
+  .use-list button { font-size:.82rem; padding:10px 8px; gap:8px; }
+  .chips { gap:8px; }
+  .chip { padding:8px 12px; font-size:.84rem; }
+  .info-card { flex-direction:column; gap:10px; }
+}
+@media (max-width: 360px){
+  .container { padding-inline:16px; }
+  .h-display { font-size:1.85rem; }
+  h1 { font-size:1.9rem; }
+  h2 { font-size:1.6rem; }
+  .use-list { grid-template-columns:1fr; }
 }
